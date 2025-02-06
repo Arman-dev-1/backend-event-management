@@ -14,6 +14,12 @@ cloudinary.config({
   secure: true,
 });
 
+app.use(cors({ 
+    origin: "https://event-management-arman.netlify.app", // Allow only your frontend
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true
+}));
+
 const app = express();
 app.use(cors());
 app.use(express.json());
